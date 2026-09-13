@@ -364,12 +364,12 @@ main {
 \*-----------------------------------*/
 .sidebar {
   margin-bottom: var(--space-lg);
-  max-height: 112px;
+  max-height: 140px;
   overflow: hidden;
   transition: max-height 0.5s var(--ease-out), background var(--transition-slow);
 }
 
-.sidebar.active { max-height: 700px; }
+.sidebar.active { max-height: 800px; }
 
 .sidebar-info {
   position: relative;
@@ -387,6 +387,8 @@ main {
 }
 
 .avatar-box img {
+  width: 100%;
+  max-width: 160px;
   border-radius: var(--radius-xl);
   transition: transform var(--transition-normal);
 }
@@ -1851,6 +1853,38 @@ textarea.form-input::-webkit-resizer { display: none; }
 /*-----------------------------------*\
   #RESPONSIVE — MOBILE FIRST
 \*-----------------------------------*/
+
+/* Mobile specific fixes ( < 580px ) */
+@media (max-width: 579px) {
+  .sidebar {
+    max-height: 290px;
+  }
+  .sidebar-info {
+    flex-direction: column;
+    text-align: center;
+  }
+  .avatar-box {
+    width: 120px;
+    margin: 0 auto;
+  }
+  .info-content .title {
+    margin-top: 10px;
+  }
+  .contact-item-box {
+    padding: var(--space-lg);
+    gap: var(--space-md);
+  }
+  .contact-icon {
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+  }
+  .resume-viewer iframe,
+  .resume-viewer object,
+  .resume-viewer embed {
+    height: 500px;
+  }
+}
 
 /* >= 450px */
 @media (min-width: 450px) {
